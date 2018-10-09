@@ -1,7 +1,7 @@
 {
 "version": 3,
-"mappings": "AAAA,WAAY;EACR,UAAU,ECDE,IAAI;EDEhB,WAAW,EAAE,UAAU;;AACvB,aAAE;EACE,KAAK,ECHL,IAAI;;ADIJ,kBAAK;EACD,SAAS,EAAE,KAAK;EAChB,WAAW,EAAE,IAAI",
-"sources": ["../dev/scss/_import.scss","../dev/scss/_site-settings.scss"],
+"mappings": "AAAA,WAAY;EACR,UAAU,ECAE,IAAI;EDChB,WAAW,EAAE,UAAU;;AACvB,aAAE;EACE,KAAK,ECDL,IAAI;;ADEJ,kBAAK;EACD,SAAS,EAAE,KAAK;EAChB,WAAW,EAAE,IAAI;;;AENzB,eAAK;EACD,UAAU,EDCV,IAAI;ECAJ,WAAW,EDIJ,SAAS;ECHhB,SAAS,EAAE,KAAK;EAChB,MAAM,EAAE,MAAM;EACd,OAAO,EAAE,GAAG;;AACZ,kBAAG;EACC,KAAK,EDNM,OAAO;;ACQtB,iBAAE;EACE,KAAK,EDVD,IAAI",
+"sources": ["../dev/scss/_import.scss","../dev/scss/_site-settings.scss","../dev/scss/_variaveis.scss"],
 "names": [],
 "file": "main.css"
 }
