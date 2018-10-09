@@ -24,4 +24,31 @@ body.import p code {
   color: pink;
 }
 
+.nesting .box {
+  background: #000;
+  font-family: monospace;
+  max-width: 300px;
+  margin: 0 auto;
+  padding: 1em;
+}
+.nesting .box h1 {
+  color: #E91E63;
+}
+.nesting .box p {
+  color: pink;
+}
+.nesting .box ul {
+  padding: 0;
+}
+.nesting .box ul li {
+  list-style-type: square;
+  list-style-position: inside;
+  color: #fff;
+}
+.nesting .box ul li a {
+  color: #fff;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
 /*# sourceMappingURL=main.css.map */

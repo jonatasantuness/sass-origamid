@@ -1,0 +1,28 @@
+.nesting {
+    .box {
+        background: $black;
+        font-family: $font-primary;
+        max-width: 300px;
+        margin: 0 auto;
+        padding: 1em;
+        h1 {
+            color: $color-primary-strong;
+        }
+        p {
+            color: $color-primary;
+        }
+        ul {
+            padding: 0;
+            li {
+                list-style-type: square;
+                list-style-position: inside;
+                color: $white;
+                a {
+                    color: $white;
+                    text-transform: uppercase;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+}
