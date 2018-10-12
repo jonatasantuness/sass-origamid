@@ -33,6 +33,17 @@ body.import p code {
 }
 .nesting .box h1 {
   color: #E91E63;
+  font-size: 2em;
+  font-weight: bold;
+  font-style: normal;
+}
+.nesting .box h1::after, .nesting .box h1::before {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 1px;
+  background: #E91E63;
+  margin: 10px 0;
 }
 .nesting .box p {
   color: pink;
@@ -49,6 +60,13 @@ body.import p code {
   color: #fff;
   text-transform: uppercase;
   cursor: pointer;
+}
+.nesting .box ul li a:hover {
+  color: #E91E63;
+}
+
+.nesting ul li:last-child a {
+  opacity: .5;
 }
 
 /*# sourceMappingURL=main.css.map */

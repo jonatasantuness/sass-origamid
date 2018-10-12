@@ -7,6 +7,20 @@
         padding: 1em;
         h1 {
             color: $color-primary-strong;
+            // Nesting de propriedade
+            font: {
+                size: 2em;
+                weight: bold;
+                style: normal;
+            }
+            &::after, &::before {
+                content: '';
+                display: block;
+                width: 100%;
+                height: 1px;
+                background: $color-primary-strong;
+                margin: 10px 0;
+            }
         }
         p {
             color: $color-primary;
@@ -21,7 +35,22 @@
                     color: $white;
                     text-transform: uppercase;
                     cursor: pointer;
+                    // Para concatenar utilizamos '&'.
+                    &:hover {
+                        color: $color-primary-strong;
+                    }
                 }
+            }
+        }
+    }
+}
+
+ul {
+    li:last-child {
+        a {
+            // É possivel inserir uma classe na frente da seleção
+            .nesting & {
+                opacity: .5;
             }
         }
     }
