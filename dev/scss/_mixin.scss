@@ -1,0 +1,74 @@
+// Utilizando mixin para construir o card.
+@mixin card {
+    width: 320px;
+    height: 400px;
+    margin: 0 auto;
+    padding: 1em;
+    background: $lightyellow;
+    border: 2px solid $color-primary-strong;
+}
+
+@mixin title-large {    
+    font: {
+        size: 4em;
+        weight: bold;
+        family: $font-primary;
+    }
+    line-height: 1;
+}
+
+// Os mixins podem ser muito úteis na utilização de prefixos.
+@mixin border-box {
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+
+// O mixin permite a adição de argumentos, os mesmos devem ser passados na ordem no include. Um valor padrão pode ser definido nos argumentos, no caso abaixo caso não seja definido o tamanho no include, o mixin considera o valor padrão.
+@mixin separador($cor, $largura: 100%) {
+    // Aproveitando o Nesting no Mixin.
+    &::after {
+        content: '';
+        background: $cor;
+        width: $largura;
+        display: block;
+        height: 2px;
+        margin: 10px 0;
+    }
+}
+
+// É possível inserir mais de um valor no mesmo argumento, para isto utilzamos '...', como no exemplo abaixo chamaremos duas sombras no include.
+@mixin box-shadow($sombra...) {
+    box-shadow: $sombra;
+}
+
+// O 'content' pode ser muito útil para media queries, no exemplo abaixo criaremos um receptor de conteúdo que pode ser reutilizados em todo código.
+@mixin mobile {
+    @media screen and (max-width: 768px){
+        @content;
+    }
+}
+
+.mixin {
+    .card {
+        @include card;
+        @include border-box;
+        @include box-shadow(5px 5px 0 0 rgba(255,192,203,1), 10px 10px 0 0 rgba(255,192,203,.3));
+        @include mobile {
+            height: 320px;
+        }
+        h1 {
+            // Para usar o mixin utlizamos o '@include'.
+            @include title-large;
+            @include separador($color-primary-strong, 50%);
+            @include mobile {
+                font-size: 2em;
+            }
+            color: $color-primary-strong;
+        }
+        p {
+            color: $color-primary-strong;
+            font-family: $font-primary;
+        }
+    }
+}

@@ -69,4 +69,46 @@ body.import p code {
   opacity: .5;
 }
 
+.mixin .card {
+  width: 320px;
+  height: 400px;
+  margin: 0 auto;
+  padding: 1em;
+  background: #ffffe0;
+  border: 2px solid #E91E63;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-shadow: 5px 5px 0 0 pink, 10px 10px 0 0 rgba(255, 192, 203, 0.3);
+}
+@media screen and (max-width: 768px) {
+  .mixin .card {
+    height: 320px;
+  }
+}
+.mixin .card h1 {
+  font-size: 4em;
+  font-weight: bold;
+  font-family: monospace;
+  line-height: 1;
+  color: #E91E63;
+}
+.mixin .card h1::after {
+  content: '';
+  background: #E91E63;
+  width: 50%;
+  display: block;
+  height: 2px;
+  margin: 10px 0;
+}
+@media screen and (max-width: 768px) {
+  .mixin .card h1 {
+    font-size: 2em;
+  }
+}
+.mixin .card p {
+  color: #E91E63;
+  font-family: monospace;
+}
+
 /*# sourceMappingURL=main.css.map */
