@@ -184,4 +184,19 @@ body.import p code {
   background: orange;
 }
 
+.operadores {
+  font-size: 16px;
+  font-family: sans-serif;
+  background: #dddddd;
+}
+.operadores p {
+  font-size: 26px;
+  padding: 20px;
+  width: 360px;
+}
+.operadores h1 {
+  font-size: 3em;
+  padding: 20px;
+}
+
 /*# sourceMappingURL=main.css.map */

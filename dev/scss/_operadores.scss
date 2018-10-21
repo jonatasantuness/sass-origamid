@@ -1,0 +1,20 @@
+$padding-default: 20px;
+
+.operadores {
+    font-size: 16px;
+    font-family: sans-serif;
+    // É possivel somar cores (mesmo em hexadecimal)
+    background: #444 + #999; // #aaa
+    p {
+        // Ao utilizar operadores não é necessário especificar a unidade de medida pois será calculado de acordo no caso abaixo em pixels. 
+        font-size: 16px + 10; // (16px)
+        // Acrescentando o padding padrão.
+        padding: $padding-default; 
+        // Atribuindo a largura já retirando o padding padrão
+        width: 400px - 2 * $padding-default; // (360px de width + 20px de padding pra direita e esquerda)
+    }
+    h1 {
+        font-size: 1em + 2; // (3em)
+        padding: $padding-default;
+    }
+}
