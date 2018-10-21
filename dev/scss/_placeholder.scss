@@ -1,0 +1,55 @@
+.placeholder {
+    font-family: monospace;
+
+    // O placeholder começa com '%', funciona mais ou menos como um mixin, ele pode encapsular estilos porém é chamado através do '@extend'.
+    %clearfix::after {
+        content: '';
+        display: table;
+        clear: both;
+    }
+
+    .container-flutuante {
+        @extend %clearfix;
+        max-width: 500px;
+        border: 1px solid #000;
+        margin: 0 auto;
+        box-sizing: border-box;
+        margin-bottom: 20px;
+        .box1 {
+            display: block;
+            float: left;
+            width: 200px;
+            height: 300px;
+            background: red;
+        }
+        .box2 {
+            display: block;
+            float: right;
+            width: 200px;
+            height: 400px;
+            background: blue;
+        }
+    }
+    // Como o placeholder é chamado por um extend, então a classe que chamar este placeholder também será adicionada após uma virgula à outras classes que também chamaram este mesmo extend.
+    .section-flutuante {
+        @extend %clearfix;
+        max-width: 400px;
+        border: 1px solid #000;
+        margin: 0 auto;
+        box-sizing: border-box;
+        .box1 {
+            display: block;
+            float: left;
+            width: 200px;
+            height: 250px;
+            background: green;
+        }
+        .box2 {
+            display: block;
+            float: right;
+            width: 100px;
+            height: 300px;
+            background: orange;
+        }
+    }
+}

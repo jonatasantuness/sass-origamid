@@ -1,0 +1,25 @@
+.extend {
+    font-family: monospace;
+    .erro {
+        color: red;
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+    // Para utilizar o extend utilizamos o '@extend .nome-da-classe;' dentro da classe desejada que quer aproveitar os estilos de uma outra classe. A classe '.button-erro' será adicionada depois de uma virgula à classe '.erro' como no exemplo abaixo:
+    /* .erro, .button-erro  {
+        color: red;
+        font-weight: bold;
+    } */
+    .button-erro {
+        @extend .erro;
+        padding: 20px;
+        width: 200px;
+        cursor: pointer;
+    }
+    // É preciso tomar cuidado ao usar o extend, como no exemplo abaixo as tags 'a' que tiverem a classe '.erro' também receberão os estilos da classe '.button-erro' pois está ultima foi adicionada à '.erro' através do extend.
+    a.erro {
+        margin-top: 10px;
+        text-decoration: none;
+        color: orangered;
+    }
+}

@@ -111,4 +111,77 @@ body.import p code {
   font-family: monospace;
 }
 
+.extend {
+  font-family: monospace;
+  /* .erro, .button-erro  {
+      color: red;
+      font-weight: bold;
+  } */
+}
+.extend .erro, .extend .button-erro {
+  color: red;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+.extend .button-erro {
+  padding: 20px;
+  width: 200px;
+  cursor: pointer;
+}
+.extend a.erro, .extend a.button-erro {
+  margin-top: 10px;
+  text-decoration: none;
+  color: orangered;
+}
+
+.placeholder {
+  font-family: monospace;
+}
+.placeholder .container-flutuante::after, .placeholder .section-flutuante::after {
+  content: '';
+  display: table;
+  clear: both;
+}
+.placeholder .container-flutuante {
+  max-width: 500px;
+  border: 1px solid #000;
+  margin: 0 auto;
+  box-sizing: border-box;
+  margin-bottom: 20px;
+}
+.placeholder .container-flutuante .box1 {
+  display: block;
+  float: left;
+  width: 200px;
+  height: 300px;
+  background: red;
+}
+.placeholder .container-flutuante .box2 {
+  display: block;
+  float: right;
+  width: 200px;
+  height: 400px;
+  background: blue;
+}
+.placeholder .section-flutuante {
+  max-width: 400px;
+  border: 1px solid #000;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+.placeholder .section-flutuante .box1 {
+  display: block;
+  float: left;
+  width: 200px;
+  height: 250px;
+  background: green;
+}
+.placeholder .section-flutuante .box2 {
+  display: block;
+  float: right;
+  width: 100px;
+  height: 300px;
+  background: orange;
+}
+
 /*# sourceMappingURL=main.css.map */
