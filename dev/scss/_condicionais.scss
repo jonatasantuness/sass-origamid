@@ -1,0 +1,84 @@
+// $tema: sky;
+$tema: dark;
+$tema-bg: #eee;
+$tema-color: #222;
+
+// As condicionais podem ser úteis para criar temas ou versões 'dark'
+@if $tema == sky {
+    $tema-bg: deepskyblue;
+    $tema-color: #050f44;
+} @else if $tema == dark {
+    $tema-bg: #222;
+    $tema-color: #eee;
+}
+
+// Podemos usar as condicionais para manter a consistência do design e fazer mixins com fontes padrões por exemplo.
+@mixin fonte-1($size: 14px) {
+    font-family: cursive;
+    @if $size <= 16 {
+        font-size: 1em;
+        font-weight: normal;
+    } @else if $size <= 18 {
+        font-size: 1.5em;
+        font-weight: normal;
+    } @else if $size <= 24 {
+        font-size: 2em;
+        font-weight: bold;
+    }
+}
+
+// O elemento que está mais 'ativo' na tela tem uma sombra maior, podemos criar condicionais com padrões para sombra.
+@mixin shadow($sombra: 'forte') {
+    @if $sombra == 'forte' {
+        box-shadow: 5px 5px 5px 0 rgba(0, 0, 0, .3);
+    } @else if $sombra == 'media' {
+        box-shadow: 15px 15px 15px 0 rgba(0, 0, 0, .3);
+    } @else if $sombra == 'fraca' {
+        box-shadow: 25px 25px 25px 0 rgba(0, 0, 0, .3);
+    }
+}
+
+// Utlizando condicionais com breakpoints
+@mixin device($device) {
+    @if $device == mobile {
+        @media screen and (max-width: 767px) {
+            @content;
+        }
+    } @else if $device == tablet {
+        @media screen and (max-width: 1023px) {
+            @content;
+        }
+    } @else if $device == desktop {
+        @media screen and (min-width: 1024px) {
+            @content;
+        }
+    }
+}
+
+.condicionais {
+    .box {
+        background:  $tema-bg;
+        text-align: center;
+        max-width: 400px;
+        padding: 1em;
+        border-radius: 4px;
+        margin: 0 auto;
+        margin-top: 10%;
+        // @include shadow('fraca');
+        @include shadow('forte');
+        h1 {
+            color: $tema-color;
+            @include fonte-1(24);
+            @include device(tablet) {
+                @include fonte-1(18);
+            }
+        }
+        p {
+            color: $tema-color;
+            @include fonte-1(18);
+            @include device(tablet) {
+                @include fonte-1(16);
+            }
+        }
+    }
+}
