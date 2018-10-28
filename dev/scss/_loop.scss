@@ -1,0 +1,66 @@
+// O loop pode ser útil para criar classes como colunas em grid por exemplo
+$container: 960px;
+$gutter: 20px;
+$colunas: 12;
+
+.loop {
+    font-family: sans-serif;
+    // Para utilizar o for utlizamos '@for' onde o '$i' é o contador e 'from/through' definem o loop, no caso abaixo o $i começa com '1' e o loop termina quando o $i chegar a 6.
+    @for $i from 1 through $colunas {
+        $width: $container / $colunas * $i - $gutter;
+        // O SASS precisa do '#{}' para reconher o uso da variável como parâmetro, isso irá criar divs com classe 'item-1, item-2...' e tamanhos '100px, 200px...'
+        .col-#{$i} {
+            width: $width;
+            display: block;
+            padding: 1em;
+            margin: 10px 0;
+            background: #eee;
+            border: 1px solid #000;
+            box-sizing: border-box;
+
+        }
+    }
+
+    // Criando loop para grids com porcetagem
+    @for $i from 1 through 12 {
+        // A função percentage calcular a porcetagem desta razão do parâmetro
+        $width: percentage($i / 12);
+        .grid-#{$i} {
+            width: $width;
+            display: block;
+            padding: 1em;
+            margin: 10px 0;
+            background: azure;
+            border: 1px solid #000;
+            box-sizing: border-box;
+
+        }
+    }
+
+    // Utilizando o '@while' para definir fontes
+    $i: 1;
+    @while $i <= 6 {
+        .font-type-#{$i} {
+            font-size: 16 * $i + px;
+        }
+        $i: $i + 1;
+    }
+
+    // Para criar uma lista faça uma variável e separe os valores com espaço, o '@each' pode ser utlizado para percorrer esta lista de social media por exemplo.
+    $lista-social-media: facebook twitter linkedin instagram;
+    @each $item in $lista-social-media {
+        .social-media-#{$item} {
+            background-image: url("../dev/img/#{$item}.png");
+        }
+    }
+
+    ul {
+        list-style: none;
+        li {
+            width: 32px;
+            height: 32px;
+            display: inline-block;
+        }
+    }
+    
+}
