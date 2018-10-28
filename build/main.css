@@ -236,4 +236,45 @@ body.import p code {
   }
 }
 
+.funcoes {
+  font-family: sans-serif;
+  text-align: center;
+  width: 600px;
+  margin: 0 auto;
+}
+.funcoes h1 {
+  color: #84e;
+  font-size: 2em;
+}
+.funcoes a {
+  font-size: 1em;
+  color: #fff;
+  padding: 1em;
+  display: inline-block;
+  background: #84e;
+  margin: 10px 0;
+}
+.funcoes a.lighten:hover {
+  background: #c4a2f7;
+}
+.funcoes a.darken:hover {
+  background: #4a0fa4;
+}
+.funcoes a.trans:hover {
+  background: rgba(136, 68, 238, 0.5);
+}
+.funcoes p {
+  font-size: 1.25em;
+}
+.funcoes ul {
+  padding: 0;
+}
+.funcoes ul li {
+  list-style: none;
+  font-size: 2em;
+}
+.funcoes ul li a {
+  font-size: 0.5em;
+}
+
 /*# sourceMappingURL=main.css.map */

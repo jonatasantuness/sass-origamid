@@ -1,0 +1,62 @@
+$roxo: #84e;
+$font-size-default: 16;
+
+// Criando uma função que recebe um tamanho de fonte em pixel e o contexto que pode ser o tamanho de fonte do elemento pai ou o tamanho default(normalmente utilizado pela maioria dos navegadores é 16px) e retornando seu font-size em 'em'
+@function turnEm($pixels, $contexto: $font-size-default) {
+    @return ($pixels / $contexto) * 1em;
+}
+
+// Criando uma função para grids, primeiro parametro é o numero de colunas que o elemento vai ter e o segundo é numero de total de coluna para ser utlizado como referência no calculo.
+@function grid($colunas, $total-de-colunas: 12) {
+    @return ($colunas / $total-de-colunas) * 1200px;
+    @return ($colunas / $total-de-colunas) * 100%;
+}
+
+.funcoes {
+    font-family: sans-serif;
+    text-align: center;
+    width: grid(6);
+    margin: 0 auto;
+    h1 {
+        color: $roxo;
+        font-size: turnEm(32); 
+    }
+    a {
+        font-size: turnEm(16); 
+        color: #fff;
+        padding: 1em;
+        display: inline-block;
+        background: $roxo;
+        margin: 10px 0;
+        // Exemplo de uso das funções 'lighten' e 'darken'
+        &.lighten {
+            &:hover {
+                background: lighten($roxo, 20%); 
+            }
+        }
+        &.darken {
+            &:hover {
+                background: darken($roxo, 25%); 
+            }
+        }
+        &.trans {
+            &:hover {
+                background: transparentize($roxo, .5); 
+            }
+        }
+    }
+    p {
+        font-size: turnEm(20);
+    }
+    ul {
+        padding: 0;
+        li {
+            list-style: none;
+            font-size: 2em; // 32px, seus filhos que usarem em se basearão neste tamanho
+            a {
+                // Utilizando a função turnEm com um novo contexto baseado no tamanho do pai (segundo argumento)
+                font-size: turnEm(16, 32);
+            }
+        }
+    }
+}
