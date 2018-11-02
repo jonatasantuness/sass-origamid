@@ -2,9 +2,9 @@
 Curso de SASS.
 
 ## Dependências
--grunt
--grunt-contrib-sass
--grunt-contrib-watch
+- grunt
+- grunt-contrib-sass
+- grunt-contrib-watch
 
 ## Build:
 ```
